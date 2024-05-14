@@ -23,9 +23,12 @@ set +x
 echo 'The following command runs and outputs the execution of your Java'
 echo 'application (which Jenkins built using Maven) to the Jenkins UI.'
 set -x
+
 # Limpar o nome do arquivo removendo caracteres extras
 CLEAN_NAME=$(echo "${NAME}" | sed 's/\x1B\[[0-9;]*[JKmsu]//g')
 CLEAN_VERSION=$(echo "${VERSION}" | sed 's/\x1B\[[0-9;]*[JKmsu]//g')
 
 # Imprimir o caminho completo do arquivo JAR limpo
 echo "Caminho completo do arquivo JAR: target/${CLEAN_NAME}-${CLEAN_VERSION}.jar"
+
+java -jar "target/${CLEAN_NAME}-${CLEAN_VERSION}.jar"
