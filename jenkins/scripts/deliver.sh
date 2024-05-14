@@ -31,4 +31,4 @@ CLEAN_VERSION=$(echo "${VERSION}" | sed 's/\x1B\[[0-9;]*[JKmsu]//g')
 # Imprimir o caminho completo do arquivo JAR limpo
 echo "Caminho completo do arquivo JAR: target/${CLEAN_NAME}-${CLEAN_VERSION}.jar"
 
-java -jar "target/${CLEAN_NAME}-${CLEAN_VERSION}.jar"
+java -jar target/${CLEAN_NAME}-${CLEAN_VERSION}.jar
